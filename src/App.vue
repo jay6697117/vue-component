@@ -1,12 +1,32 @@
 <template>
-  <div id="app">
+  <div id="app" ref="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
+      |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      title: 'App根组件',
+      dataObj: {
+        componentName: 'App component'
+      }
+    };
+  },
+  provide() {
+    return {
+      nameObj: this.dataObj
+    };
+  }
+};
+</script>
 
 <style lang="less">
 #app {
