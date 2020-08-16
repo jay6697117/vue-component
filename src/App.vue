@@ -20,6 +20,7 @@ export default {
       }
     };
   },
+  //provide App
   provide() {
     return {
       nameObj: this.dataObj

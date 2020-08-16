@@ -2,19 +2,19 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <div>
-
-      <i-button ref="iButton1" id="largeId" class="largeClass" size="large" @btn-click="btnClickHandle">
+      <i-button ref="iButton1" id="largeId" class="largeClass" size="large" @click="btnClickHandle">
         <span slot="icon" class="icon-logo"></span>
         <span>large按钮</span>
       </i-button>
 
       <hr />
 
-      <i-button id="defaultd" class="defaultClass" size="default" @btn-click="btnClickHandle"></i-button>
+      <i-button id="defaultd" class="defaultClass" size="default" @click="btnClickHandle"></i-button>
+      <i-button id="defaultd" class="defaultClass" size="default" @click.native="btnClickHandle"></i-button>
 
       <hr />
 
-      <i-button id="smallId" class="smallClass" size="small" @btn-click="btnClickHandle">
+      <i-button id="smallId" class="smallClass" size="small" @click="btnClickHandle">
         <span slot="icon" class="icon-wps"></span>
         <span>small按钮</span>
       </i-button>
@@ -26,11 +26,10 @@
         id="disabledId"
         class="disabledClass"
         :disabled="true"
-        @btn-click="btnClickHandle"
+        @click="btnClickHandle"
       ></i-button>
-
-      <div>App nameObj: {{nameObj}}</div>
-
+      <hr />
+      <div class="show-dom">App nameObj: {{ nameObj }}</div>
     </div>
   </div>
 </template>
@@ -45,7 +44,7 @@ export default {
       title: 'Home页面'
     };
   },
-  inject:['nameObj'],
+  inject: ['nameObj'],
   components: {
     'i-button': IButton
   },
@@ -87,5 +86,10 @@ export default {
   background-image: url('../assets/wps.png');
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.show-dom {
+  background-color: #eeeeee;
+  padding: 10px 0;
 }
 </style>

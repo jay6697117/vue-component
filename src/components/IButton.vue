@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     clickHandle() {
-      this.$emit('btn-click', this.size);
+      this.$emit('click', this.size);
     }
   }
 };

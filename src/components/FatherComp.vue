@@ -23,6 +23,7 @@ export default {
       }
     };
   },
+  // provide FatherComp
   provide() {
     return {
       nameObj: this.counterObj

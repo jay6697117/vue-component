@@ -14,14 +14,13 @@ export default {
     return {
       msg: '泰勒.斯威夫特',
       counter: 0
-
     };
   },
   methods: {
     brother() {
       //派发事件
-      this.counter+=1;
-      bus.$emit('eventA', this.msg+' -- '+this.counter);
+      this.counter += 1;
+      bus.$emit('eventA', this.msg + ' -- ' + this.counter);
     }
   }
 };
